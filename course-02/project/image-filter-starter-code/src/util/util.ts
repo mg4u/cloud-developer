@@ -21,14 +21,33 @@ export async function filterImageFromURL(inputURL: string): Promise<string>{
         });
     });
 }
-
+//
+// deleteDirFilesExcept
+// helper function to delete files on the local disk except specific file whoch is displayed now
+// useful to cleanup after tasks
+// INPUTS
+//    exceptFileName: string name of the file which will not be deleted
+export async function deleteDirFilesExcept(exceptFileName: string){
+    const folderPath = __dirname+'/tmp'
+    const files =await fs.readdirSync(folderPath)
+    for (const file of files) {
+        //check if the file is not the file which we do not want to delete
+        if( file != exceptFileName ){
+            //delete file 
+            fs.unlinkSync(folderPath+'/'+file);
+        }
+    }
+}
+//
 // deleteLocalFiles
 // helper function to delete files on the local disk
 // useful to cleanup after tasks
 // INPUTS
 //    files: Array<string> an array of absolute paths to files
-export async function deleteLocalFiles(files:Array<string>){
+
+export async function deleteLocalFiles(files: Array<string>): Promise<string> {
     for( let file of files) {
         fs.unlinkSync(file);
     }
+    return 'done'
 }
