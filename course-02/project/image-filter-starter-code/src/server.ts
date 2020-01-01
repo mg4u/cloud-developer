@@ -34,7 +34,7 @@ import { tmpdir } from 'os';
     }
     //1. validate the image_url query is a valid url
     const { image_url } = req.query
-    const urlExp= /^http(s)?\:\/\/[0-9a-zA-Z]{1,7}[0-9a-zA-Z\.\/\-\_\+]{1,1000}\.(jpg|png|jpeg|gif|bmp){1}$/
+    const urlExp= /^http(s)?\:\/\/[0-9a-zA-Z]{1,7}[0-9a-zA-Z\.\/\-\_\+\\*@]{1,1000}\.(jpg|png|jpeg|gif|bmp){1}$/
     if( ! urlExp.test(image_url) ) {
       return res.status(400).send({message: 'image_url is not valid'})
     }
