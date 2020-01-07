@@ -1,0 +1,22 @@
+version: "3"
+services:
+  reverseproxy:
+      image: mg4u/reverseproxy
+      ports:
+          - 8080:8080
+      restart: always
+      depends_on:
+        - backend-user
+        - backend-feed     
+  backend-user:
+    image: mg4u/udacity-restapi-user
+    volumes:
+      - $HOME/.aws:/root/.aws
+    environment:
+      URL: "http://localhost:8100"
+  backend-feed:
+    image: mg4u/udacity-restapi-feed
+    volumes:
+      - $HOME/.aws:/root/.aws
+    environment:
+      URL: "http://localhost:8100"

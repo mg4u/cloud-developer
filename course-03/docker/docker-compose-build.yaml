@@ -1,0 +1,14 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: .
+    image: mg4u/reverseproxy 
+  backend_user:
+    build:
+      context: ../user-service
+    image: mg4u/udacity-restapi-user
+  backend_feed:
+    build:
+      context: ../feed-service  
+    image: mg4u/udacity-restapi-feed
