@@ -1,0 +1,72 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    service: backend-user
+  name: backend-user
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: backend-user
+    spec:
+      containers:
+      - image: mg4u/udacity-restapi-user
+        name: backend-user 
+        imagePullPolicy: Always  
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"      
+        env:
+        - name: URL
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: URL 
+        - name: HOST
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: HOST
+        - name: DB_ENGING
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: DB_ENGING
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: DB_HOST
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: DB_NAME
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: env-secret
+              key: DB_USERNAME
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: env-secret
+              key: DB_PASSWORD
+        - name: jwttoken
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: jwttoken
+        - name: APITOKEN
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: APITOKEN
+      restartPolicy: Always
+      

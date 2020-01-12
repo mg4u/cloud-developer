@@ -3,6 +3,7 @@ import { config } from './config/config';
 
 
 const c = config.dev;
+// console.info('cofig', c)
 // Instantiate new Sequelize instance!
 export const sequelize = new Sequelize({
   "username": c.username,
@@ -15,3 +16,4 @@ export const sequelize = new Sequelize({
   
 });
 
+console.log(sequelize.ConnectionError)

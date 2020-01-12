@@ -7,16 +7,57 @@ services:
       restart: always
       depends_on:
         - backend-user
-        - backend-feed     
+        - backend-feed
+        - mysql
   backend-user:
     image: mg4u/udacity-restapi-user
+    
+    env_file: .env
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
+      HOST: $HOST
+      DB_ENGING: $DB_ENGING 
+      DB_HOST: $DB_HOST 
+      DB_NAME: $DB_NAME 
+      DB_USERNAME: $DB_USERNAME 
+      DB_PASSWORD: $DB_PASSWORD 
+      AWS_REGION: $AWS_REGION 
+      AWS_PROFILE: $AWS_PROFILE 
+      AWS_BUCKET: $AWS_BUCKET
+      jwttoken: $jwttoken
+      APITOKEN: $APITOKEN
       URL: "http://localhost:8100"
+
   backend-feed:
     image: mg4u/udacity-restapi-feed
+    env_file: .env
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
+      HOST: $HOST
+      DB_ENGING: $DB_ENGING 
+      DB_HOST: $DB_HOST 
+      DB_NAME: $DB_NAME 
+      DB_USERNAME: $DB_USERNAME 
+      DB_PASSWORD: $DB_PASSWORD 
+      AWS_REGION: $AWS_REGION 
+      AWS_PROFILE: $AWS_PROFILE 
+      AWS_BUCKET: $AWS_BUCKET
+      jwttoken: $jwttoken
+      APITOKEN: $APITOKEN
       URL: "http://localhost:8100"
+
+  mysql:
+    image: mysql
+    ports:
+      - "33061:3306"
+      - "3307:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USERNAME
+      MYSQL_PASSWORD: $DB_PASSWORD
+        
