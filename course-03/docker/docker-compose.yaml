@@ -8,7 +8,6 @@ services:
       depends_on:
         - backend-user
         - backend-feed
-        - mysql
   backend-user:
     image: mg4u/udacity-restapi-user
     
@@ -47,17 +46,3 @@ services:
       jwttoken: $jwttoken
       APITOKEN: $APITOKEN
       URL: "http://localhost:8100"
-
-  mysql:
-    image: mysql
-    ports:
-      - "33061:3306"
-      - "3307:3306"
-    volumes:
-      - ./mysql:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_DATABASE: $DB_NAME
-      MYSQL_USER: $DB_USERNAME
-      MYSQL_PASSWORD: $DB_PASSWORD
-        
