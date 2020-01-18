@@ -37,11 +37,11 @@ docker-compose -f docker-compose-build.yaml build --parallel
 
 # Run the docker in local machine
 <pre>
-cd course-03/docker
+cd docker
 docker-compose up
 </pre>
 
-# run the front end
+# Run the front end
 <pre>
 cd udacity-c3-frontend
 npm start
