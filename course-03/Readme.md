@@ -31,7 +31,7 @@ run these 2 commands after setting the image Names in the `docker-compose.yaml` 
 docker-compose -f docker-compose-build.yaml build --parallel
 </pre>
 
-# 3- Kurbenetes
+# 3- Kubernetes
 
 
 
