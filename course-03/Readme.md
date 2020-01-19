@@ -68,5 +68,3 @@ kubectl get configmaps
 kubectl get secrets
 kubectl describe secret/env-secret
 </pre>
-
-
