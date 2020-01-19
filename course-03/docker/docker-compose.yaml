@@ -46,3 +46,7 @@ services:
       jwttoken: $jwttoken
       APITOKEN: $APITOKEN
       URL: "http://localhost:8100"
+  frontend:
+    image: mg4u/udacity-frontend:local
+    ports:
+      - "8100:80"
