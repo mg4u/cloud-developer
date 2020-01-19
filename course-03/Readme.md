@@ -1,7 +1,6 @@
 # cloud-developer
 content for Udacity's cloud developer nanodegree
 
-# Installation
 Before any Installation proccess.
 Set the DB connection, aws bucket configration, and JWT into envirment variables file
  
@@ -19,7 +18,7 @@ npm install
 ionic serve
 </pre>
 
-# 2- Build Images
+# 2- Docker Images
 
 cd into docker file
 <pre>
@@ -34,6 +33,10 @@ docker-compose up
 
 # 3- Kubernetes
 - Run on AWS Cluster
+### Create cluster
+<pre>
+eksctl create cluster --name YOUR_CLUSTER_NAME 
+</pre>
 Generate encrypted values for aws credentials, Database User Name, and Database Password using bcrypt and put the values into aws-secret.yaml and env-secret.yaml files
 <pre>
 kubectl apply -f aws-secret.yaml
