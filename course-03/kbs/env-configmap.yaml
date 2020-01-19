@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+    DB_ENGING: _YOUR_DB_ENGING_ 
+    DB_HOST: _YOUR_DB_HOST_ 
+    DB_NAME: _YOUR_DB_NAME_ 
+    AWS_REGION: _YOUR_AWS_REGION_ 
+    AWS_PROFILE: _YOUR_AWS_PROFILE_ 
+    AWS_BUCKET: _YOUR_AWS_BUCKET_
+    URL: http://localhost:8100  
+metadata:
+  name: env-config

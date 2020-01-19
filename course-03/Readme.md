@@ -39,6 +39,8 @@ eksctl create cluster --name YOUR_CLUSTER_NAME
 </pre>
 Generate encrypted values for aws credentials, Database User Name, and Database Password using bcrypt and put the values into aws-secret.yaml and env-secret.yaml files
 <pre>
+cd kbs
+
 kubectl apply -f aws-secret.yaml
 kubectl apply -f env-secret.yaml
 
