@@ -25,14 +25,15 @@ cd into docker file
 <pre>
 cd docker
 </pre>
-run these 2 commands after setting the image Names in the `docker-compose.yaml` and `docker-dompose-build.yaml`
+run these 2 commands after setting the image Names in the `docker-compose.yaml` and `docker-dompose-build.yaml`, to build and run the images
 
 <pre>
 docker-compose -f docker-compose-build.yaml build --parallel
+docker-compose up
 </pre>
 
 # 3- Kubernetes
-
+- Run on AWS Cluster
 Generate encrypted values for aws credentials, Database User Name, and Database Password using bcrypt and put the values into aws-secret.yaml and env-secret.yaml files
 <pre>
 kubectl apply -f aws-secret.yaml
