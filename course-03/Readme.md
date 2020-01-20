@@ -7,8 +7,12 @@
 Before any Installation proccess.
 - 1- Create Postgard DB, S# Bucket in your AWS account.
 - 2- Set the DB connection, aws bucket configration, and JWT into envirment variables file
- **Use this link to create Base4 strng of `username`, and `Password` of the DB, and `aws secret`**
- [https://www.base64encode.org/]https://www.base64encode.org/
+```
+ **Use this link to create Base4 strng of `username`, and `Password` of the DB, and `aws credentials`**
+```
+ [https://www.base64encode.org/](https://www.base64encode.org/)
+ The credentials file usally stored in `C:\Users\<your-user-name>\.aws`
+
 - 3- Install Docker on your machine
 - 4- install `aws` , `eksctl`, and ensure that `kubectl` command tools are working well on your machine.
 
@@ -57,16 +61,15 @@ kubectl apply -f env-configmap.yaml
 
 kubectl apply -f backend-feed-deployment.yaml
 kubectl apply -f backend-user-deployment.yaml
+kubectl apply -f backend-user-deployment.yaml
+kubectl apply -f frontend-deployment.yaml
+kubectl apply -f reverseproxy-deployment.yaml
 
 kubectl apply -f back-feed-service.yaml
 kubectl apply -f back-user-service.yaml
 kubectl apply -f reverseproxy-service.yaml
 kubectl apply -f frontend-service.yaml
-</pre>
-Deploy reverse proxy, has to be done after the services are running:
-<pre>
-kubectl apply -f reverseproxy-deployment.yaml
-kubectl apply -f reverseproxy-service.yaml
+
 </pre>
 - Access the cluster from localhost
 <pre>
