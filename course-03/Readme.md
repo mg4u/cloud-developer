@@ -8,7 +8,7 @@ Before any Installation proccess.
 1- Create Postgard DB, S# Bucket in your AWS account.
 2- Set the DB connection, aws bucket configration, and JWT into envirment variables file
 3- Install Docker on your machine
-4- install `aws` , `eksctl`, and ensure that `kubectl` command tools are working fine on your machine.
+4- install `aws` , `eksctl`, and ensure that `kubectl` command tools are working well on your machine.
 
 # 1- Install Node Modules
 @ For Node Projects 
