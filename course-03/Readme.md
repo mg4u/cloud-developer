@@ -5,10 +5,13 @@
 [![Build Status](https://travis-ci.org/mg4u/cloud-developer.svg?branch=master)](https://travis-ci.org/mg4u/cloud-developer)
 
 Before any Installation proccess.
-1- Create Postgard DB, S# Bucket in your AWS account.
-2- Set the DB connection, aws bucket configration, and JWT into envirment variables file
-3- Install Docker on your machine
-4- install `aws` , `eksctl`, and ensure that `kubectl` command tools are working well on your machine.
+- 1- Create Postgard DB, S# Bucket in your AWS account.
+- 2- Set the DB connection, aws bucket configration, and JWT into envirment variables file
+ **Use this link to create Base4 strng of `username`, and `Password` of the DB, and `aws secret`**
+ [https://www.base64encode.org/]https://www.base64encode.org/
+- 3- Install Docker on your machine
+- 4- install `aws` , `eksctl`, and ensure that `kubectl` command tools are working well on your machine.
+
 
 # 1- Install Node Modules
 @ For Node Projects 
@@ -69,6 +72,11 @@ kubectl apply -f reverseproxy-service.yaml
 <pre>
 kubectl port-forward service/frontend 8100:8100
 kubectl port-forward service/reverseproxy 8080:8080
+</pre>
+
+# Scaling Up/Down
+<pre>
+kubectl scale deployment/backend-user --replicas=3
 </pre>
 
 # Check Performance
