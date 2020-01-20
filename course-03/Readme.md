@@ -1,9 +1,13 @@
 # cloud-developer
 content for Udacity's cloud developer nanodegree
+[![Build Status](https://travis-ci.org/mg4u/cloud-developer.svg?branch=master)](https://travis-ci.org/mg4u/cloud-developer)
 
 Before any Installation proccess.
-Set the DB connection, aws bucket configration, and JWT into envirment variables file
- 
+1- Create Postgard DB, S# Bucket in your AWS account.
+2- Set the DB connection, aws bucket configration, and JWT into envirment variables file
+3- Install Docker on your machine
+4- install `aws` , `eksctl`, and ensure that `kubectl` command tools are working fine on your machine.
+
 # 1- Install Node Modules
 @ For Node Projects 
 CD into ay node project in the courses and run
