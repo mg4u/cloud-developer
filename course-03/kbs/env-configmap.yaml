@@ -7,6 +7,7 @@ data:
     AWS_REGION: _YOUR_AWS_REGION_ 
     AWS_PROFILE: _YOUR_AWS_PROFILE_ 
     AWS_BUCKET: _YOUR_AWS_BUCKET_
+    jwttoken: _YOUR_jwttoken_
     URL: http://localhost:8100  
 metadata:
   name: env-config

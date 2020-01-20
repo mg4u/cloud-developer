@@ -28,6 +28,11 @@ spec:
             configMapKeyRef:
               name: env-config
               key: URL
+        - name: jwttoken
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: jwttoken
         - name: AWS_BUCKET
           valueFrom:
             configMapKeyRef:
@@ -43,16 +48,6 @@ spec:
             configMapKeyRef:
               name: env-config
               key: AWS_REGION
-        - name: URL
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: URL 
-        - name: HOST
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: HOST
         - name: DB_ENGING
           valueFrom:
             configMapKeyRef:
