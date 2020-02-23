@@ -8,10 +8,10 @@ services:
     build:
       context: ../user-service
     image: mg4u/udacity-restapi-user
-  backend_user:
+  backend_feed:
     build:
-      context: ../user-service
-    image: mg4u/udacity-restapi-user
+      context: ../feed-service
+    image: mg4u/udacity-restapi-feed
   frontend:
     build:
       context: ../udacity-c3-frontend  

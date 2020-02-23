@@ -1,7 +1,9 @@
 require('custom-env').env()
 require('custom-env').env(process.env.type)
-// console.info('DB_NAME',process.env.DB_NAME)
-// console.info('DB_HOST',process.env.DB_HOST)
+console.info('DB_NAME',process.env.DB_NAME)
+console.info('DB_HOST',process.env.DB_HOST)
+console.info('PORT',process.env.PORT)
+
 import express from 'express';
 import { sequelize } from './sequelize';
 
